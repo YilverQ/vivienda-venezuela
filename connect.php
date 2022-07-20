@@ -5,7 +5,7 @@
 	#Datos del servidor de la Base de datos.
 	$servidor = "localhost"; //127.0.0.1
 	$usuario = "root";
-	$password = "root";
+	$password = "";
 	$db_name = "mision";
 
 	try {

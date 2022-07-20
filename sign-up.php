@@ -6,9 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-	<h1>Sign Up</h1>
+    <img src="imagenes/cabecera.png" alt="">
+    <?php require "navbar_registro.php";  ?>
+	
 	<div class="content">
+	
 	<form method="post" action="createUser.php">
+	<div class="titulo_ingreso">Ingrese sus datos para  el registro</div>
 		<div class="datoForm">
 			<label for="nombre">Nombre:</label>
 			<input name="nombre" required type="text" id="nombre" placeholder="Escribe tu nombre.">
@@ -59,9 +63,7 @@
 			<input name="ci" required type="text" id="ci" placeholder="Escribe tu Cédula.">
 		</div>
 		<input class="boton" type="submit" value="Registrar">
-		<ul>
-			<li><a href="index.php">Login</a></li>
-		</ul>
+
 	</form>
 	</div>
 </body>
