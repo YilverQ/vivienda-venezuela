@@ -1,25 +1,26 @@
-INSERT INTO `estado` (`id`, `nombre`, `casas`, `edificios`) VALUES
-(1, 'Amazonas', 2065, 480),
-(2, 'Anzoategui', 1210, 125),
-(3, 'Apure', 1203, 238),
-(4, 'Aragua', 551, 125),
-(5, 'Barinas', 670, 1340),
-(6, 'Bolivar', 800, 1000),
-(7, 'Carabobo', 500, 2600),
-(8, 'Cojedes', 704, 300),
-(9, 'Delta Amacuro', 120, 200),
-(10, 'Distrito Capital', 450, 4500),
-(11, 'Falcon', 501, 671),
-(12, 'Guarico', 500, 500),
-(13, 'Lara', 670, 300),
-(14, 'Merida', 70457, 3000),
-(15, 'Miranda', 2340, 2000),
-(16, 'Monagas', 403, 500),
-(17, 'Nueva Esparta', 302, 304),
-(18, 'Portuguesa', 230, 500),
-(19, 'Sucre', 200, 304),
-(20, 'Tachira', 1500, 800),
-(21, 'Trujillo', 405, 560),
-(22, 'Vargas', 200, 500),
-(23, 'Yaracuy', 300, 500),
-(24, 'Zulia', 3000, 3050);
+-- Agregar datos a la table estados. 
+
+INSERT INTO Estado VALUES ("Amazonas", 2040, 400, "Guyana");
+INSERT INTO Estado VALUES ("Anzoategui", 1203, 120, "Oriental");
+INSERT INTO Estado VALUES ("Apure", 1203, 234, "Llanos");
+INSERT INTO Estado VALUES ("Aragua", 543, 1200, "Central");
+INSERT INTO Estado VALUES ("Barinas", 670, 1340, "Los Andes");
+INSERT INTO Estado VALUES ("Bolivar", 800, 1000, "Guyana");
+INSERT INTO Estado VALUES ("Carabobo", 500, 2600, "Central");
+INSERT INTO Estado VALUES ("Cojedes", 704, 300, "Central");
+INSERT INTO Estado VALUES ("Delta Amacuro", 120, 200, "Guyana");
+INSERT INTO Estado VALUES ("Distrito Capital", 450, 4500, "Capital");
+INSERT INTO Estado VALUES ("Falcon", 500, 670, "Occidental");
+INSERT INTO Estado VALUES ("Guarico",500, 500, "Llanos");
+INSERT INTO Estado VALUES ("Lara", 670, 300, "Occidental");
+INSERT INTO Estado VALUES ("Merida", 704, 3000, "Los Andes");
+INSERT INTO Estado VALUES ("Miranda", 2340, 2000, "Capital");
+INSERT INTO Estado VALUES ("Monagas", 403, 500, "Oriental");
+INSERT INTO Estado VALUES ("Nueva Esparta", 302, 304, "Oriental");
+INSERT INTO Estado VALUES ("Portuguesa", 230, 500, "Occidental");
+INSERT INTO Estado VALUES ("Sucre", 200, 304, "Oriental");
+INSERT INTO Estado VALUES ("Tachira", 1500, 800, "Los Andes");
+INSERT INTO Estado VALUES ("Trujillo", 405, 560, "Los Andes");
+INSERT INTO Estado VALUES ("Vargas", 200, 500, "Capital");
+INSERT INTO Estado VALUES ("Yaracuy", 300, 500, "Central");
+INSERT INTO Estado VALUES ("Zulia", 3000, 3050, "Zuliana");

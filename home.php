@@ -1,27 +1,9 @@
 <?php 
 	//Importamos la coneción con la base de datos.
 	require_once "connect.php"; 
-
-	$consulta = "SELECT * FROM estado";
-
-	$busqueda = null;
-
-	if(isset($_GET["busqueda"])){
-		$busqueda = $_GET["busqueda"];
-		$consulta = "SELECT * FROM estado WHERE nombre LIKE ?";
-	}
-
-	$sentencia = $conexion->prepare($consulta, [
-		PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL,
-	]);
-
-	if($busqueda === null){
-		$sentencia->execute();
-	} else {
-		$parametros = ["%$busqueda%"];
-		$sentencia->execute($parametros);
-	}
 	
+	//Creamos nuestros arrays
+	$regiones = array("Capital", "Central", "Oriental", "Occidental", "Los Andes", "Llanos", "Zuliana", "Guyana");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,43 +11,34 @@
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />	
 </head>
 <body>
-	<img src="imagenes/cabecera.png" alt="">
-	<?php require "navbar.php";  ?>
-	<form action="home.php" method="GET">
-	<input type="text" name="busqueda" placeholder="Buscar estado">
-	<br><br><br>
-	<button type="submit">BUSCAR</button>
-	<br><br><br>
-</form>
-	<div class="content_home">
-
-<table>
-<thead>
-<tr class="titulo_estados">
-
-<td>Estado</td>
-<td>Edificios</td>
-<td>Casas</td>
-</tr>
-</thead>
-<tbody>
-
-<?php while ($estado = $sentencia->fetchObject()) {?>
-<tr class="estados">
-
-<td><?php echo $estado->nombre ?></td>
-<td><?php echo $estado->edificios ?></td>
-<td><?php echo $estado->casas  ?></td>
-<td class="editar"><a class="editar_letra" href="<?php echo "edit.php?id=" . $estado->id ?>">Editar</a></td>
-
-<td class="editar"><a class="editar_letra" href="home.php">Todo los estados</a></td>
-
-</tr>
-<?php }?>
-</tbody>
-</table>
-</div>
+	<header>
+		<h1>Gran Misión Vivienda Venezuela</h1>
+	</header>
+	<?php foreach($regiones as $i): ?>
+	<div class="contenedor">
+		<h3>Región <?php echo $i; ?></h3>
+		<table class="default">
+			<tr>
+			  <th>Estado</th>
+			  <th>Casas</th>
+			  <th>Edificios</th>
+			</tr>
+			<!--Seleccionamos los estados según la región correspondiente-->	
+			<?php $datos = $conexion->query('Select * FROM Estado WHERE region = "'. $i . '"'); ?>
+			<!--Iteramos cada elemento de la región-->	
+	    	<?php foreach($datos as $fila): ?>
+			<tr>
+				<td><?php echo $fila["nombre"] ?></td>
+				<td class="centerText"><?php echo $fila["casas"] ?></td>
+				<td class="centerText"><?php echo $fila["edificios"] ?></td>
+			</tr>
+    		<?php endforeach; ?>
+		</table>
+		<img src="imagenes/<?php echo $i ?>.jpeg">
+	</div>
+	<?php endforeach; ?>
 </body>
 </html>
