@@ -1,0 +1,143 @@
+/*Estilos para todos los elementos*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{text-decoration: none;}
+li{list-style: none;}
+/*Fin de los estilos que aplican para todos los elementos*/
+
+/*Custom Propities*/
+:root{
+  /*Colores de Google*/
+  --color-blue: #176bef;
+  --color-yellow: #f7b529;
+  --color-green: #179c52;
+  --color-red: #ff3e30;
+
+  /*Otros colores*/
+  --color-gray: #bdbdbd;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray2: #b4b3a9;
+}
+/*FIN de las Customs Propities*/
+
+
+/*Estilos para los elementos principales*/
+h1, h2, h3, h4, p, li, a, label, td, th, input{
+  font-family: sans-serif;
+}
+p, li, a{
+  color:#2d3436;
+}
+/*Fin de los estilos principales*/
+
+body{
+    background: var(--color-green);
+    min-width: 100vh;
+    min-height: 100vh;
+}
+.content{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+h1{
+    font-size: 25px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: var(--color-white);
+}
+form{
+    display: flex;
+    flex-flow: wrap row;
+    background: var(--color-white);
+    max-width: 500px;
+    border-radius: 2px;
+    box-shadow: 2px 5px 10px rgba(10, 10, 10, .5);
+}
+label{
+    margin-top: 5px;
+    width: 80%;
+    color: var(--color-blue);
+}
+.message{
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+}
+.mensajeError{
+    background: var(--color-red);
+    font-weight: 700;
+    color: var(--color-white);
+}
+.mensajeSucces{
+    background: var(--color-blue);
+    font-weight: 700;
+    color: var(--color-white);
+}
+.datoForm{
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    background: var(--color-white);
+}
+input{
+    width: 80%;
+    padding: 10px;
+}
+.boton{
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    border: none;
+}
+form ul{
+    width: 100%;
+}
+form ul li{
+    text-align: center;
+    padding: 10px;
+}
+form ul li a{
+    color: var(--color-blue); 
+}
+
+select{
+    width: 80%;
+    color: white;
+    border: none;
+    padding: 10px;
+    background: var(--color-blue);
+}
+
+.contenedor{
+    background: var(--color-white);
+    margin: auto;
+    max-width: 250px;
+}
+table{
+    border-collapse:collapse;
+    padding: 10px;
+}
+tr th{
+    padding: 5px;
+    color: white;
+    background: var(--color-blue);
+}
+
+tr td{
+    padding: 2px;
+}
+.centerText{
+    text-align: center;
+}
